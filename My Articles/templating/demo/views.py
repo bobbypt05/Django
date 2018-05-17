@@ -1,4 +1,4 @@
-from  django.views.generic import ListView,DetailView
+from  django.views.generic import ListView, DetailView
 from .models import myArticle
 # Create your views here.
 

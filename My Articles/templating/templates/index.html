@@ -9,11 +9,15 @@
 </head>
 <body>
 
+
 		<h2>FOLLOWS :</h2>
 		{% for names in  object_list%}
 		<h1><a href="{% url 'detail_bobby' names.pk %}">{{ names.title }}</a></h1>
 		<p>{{ names.text }}</p>
 		{%  endfor %}
+
+		{% block content %}
+		{% endblock content %}
 
 </body>
 </html>
