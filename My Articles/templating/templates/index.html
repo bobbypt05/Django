@@ -1,0 +1,19 @@
+
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>BOBBY</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'stylesheet.css' %}">
+</head>
+<body>
+
+		<h2>FOLLOWS :</h2>
+		{% for names in  object_list%}
+		<h1><a href="{% url 'detail_bobby' names.pk %}">{{ names.title }}</a></h1>
+		<p>{{ names.text }}</p>
+		{%  endfor %}
+
+</body>
+</html>
