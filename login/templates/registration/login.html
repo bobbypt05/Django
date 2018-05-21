@@ -1,0 +1,21 @@
+
+
+
+{% extends 'base.html' %}
+
+
+{% block content %}
+	
+	<form method="POST">
+		{% csrf_token %}
+
+		{{form.as_p}}
+
+		<button type="sumbit">Login</button>
+	</form>
+
+	<br><br>
+
+	<a href="{% url 'signup' %}">SignUp Here</a>
+
+{% endblock content %}
