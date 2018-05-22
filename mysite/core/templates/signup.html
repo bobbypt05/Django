@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+	<div class="container">
+		<form method="POST" action="{% url 'signuppage' %}" class="text-center">
+					{% csrf_token %}
+					<h1>SignUp</h1>
+					<div class="form-group">
+						{{form.Fusername}}
+					</div>
+					<div class="form-group">
+						{{form.Ffirst_name}}
+					</div>
+					<div class="form-group">
+						{{form.Flast_name}}
+					</div>
+					<div class="form-group">
+						{{form.Femail}}
+					</div>
+					<div class="form-group">
+						{{form.Fpassword1}}
+					</div>
+					<div class="form-group">
+						{{form.Fpassword2}}
+					</div>
+					<input type="submit" name="button" class="btn btn-primary">
+		</form>
+	</div>
+{% endblock content %}
+
+		
+
