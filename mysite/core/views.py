@@ -13,8 +13,8 @@ def signup(request):
     
     	form = SignUpForm(request.POST)
     	if form.is_valid():
-    		new_req = SignUpModel(username = request.POST.get('Fusername',False), first_name = request.POST.get('Mfirst_name',False), last_name = request.POST.get('Mlast_name',False),
-    		email = request.POST.get('Memail',False), password1 = request.POST.get('Mpassword1',False), password2 = request.POST.get('Mpassword2',False))
+    		new_req = SignUpModel(username = request.POST['Fusername'], first_name = request.POST['Ffirst_name'], last_name = request.POST['Flast_name'],
+    		email = request.POST['Femail'], password1 = request.POST['Fpassword1'], password2 = request.POST['Fpassword2'])
     		new_req.save()
     		return redirect('home')
     else:
