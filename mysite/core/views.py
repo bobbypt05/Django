@@ -10,11 +10,11 @@ def homepage(request):
 
 def signup(request):
     if request.method=="POST":
+    
     	form = SignUpForm(request.POST)
-
     	if form.is_valid():
-    		new_req = SignUpModel(username = request.POST['Fusername'], first_name = request.POST['Mfirst_name'], last_name = request.POST['Mlast_name'],
-    		email = request.POST['Memail'], password1 = request.POST['Mpassword1'], password2 = request.POST['Mpassword2'])
+    		new_req = SignUpModel(username = request.POST.get('Fusername',False), first_name = request.POST.get('Mfirst_name',False), last_name = request.POST.get('Mlast_name',False),
+    		email = request.POST.get('Memail',False), password1 = request.POST.get('Mpassword1',False), password2 = request.POST.get('Mpassword2',False))
     		new_req.save()
     		return redirect('home')
     else:
